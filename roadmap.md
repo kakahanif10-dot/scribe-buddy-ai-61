@@ -7,4 +7,5 @@
 - [x] Use a light grey Lovable-style workspace instead of black.
 - [x] Remove the prompt outline and default the preview to a wider zoomed-out view.
 - [x] Add a full-chat mode that closes the preview and configuration panels.
+- [ ] Polish chat header spacing and branding
 - [ ] Remove remaining dashboard and logo-column borders

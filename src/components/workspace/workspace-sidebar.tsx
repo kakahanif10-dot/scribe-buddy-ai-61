@@ -118,7 +118,7 @@ export function WorkspaceSidebar({
     <motion.aside
       animate={{ width: collapsed ? 64 : 264 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="relative z-20 flex shrink-0 flex-col border-r border-sidebar-border bg-sidebar"
+      className="relative z-20 flex shrink-0 flex-col bg-sidebar"
     >
       {/* Brand + collapse */}
       <div className="flex h-14 items-center justify-between px-3">
@@ -279,7 +279,7 @@ export function WorkspaceSidebar({
       </div>
 
       {/* Footer actions */}
-      <div className="border-t border-sidebar-border p-3">
+      <div className="p-3">
         <Button
           className={cn('mb-2 h-10 w-full gap-2', collapsed ? 'px-0' : 'justify-start')}
           onClick={() => undefined}

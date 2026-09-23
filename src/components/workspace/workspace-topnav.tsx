@@ -21,9 +21,6 @@ export function WorkspaceTopnav({
           <span className="font-medium">{projectName}</span>
           <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
         </Button>
-        <span className="rounded-full border border-border bg-card/60 px-2 py-0.5 text-xs text-muted-foreground">
-          Draft
-        </span>
       </div>
 
       <div className="flex items-center gap-2">

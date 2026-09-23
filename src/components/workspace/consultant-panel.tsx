@@ -80,7 +80,7 @@ export function ConsultantPanel({
 
   return (
     <div className="flex h-full flex-col bg-background">
-      <div className="flex h-11 shrink-0 items-center justify-between bg-background/80 px-3 backdrop-blur-sm">
+      <div className="flex h-11 shrink-0 items-center justify-between bg-background px-3">
         <div className="flex items-center gap-2 px-1">
           <SuperintelligensMark className="h-5 w-5" />
           <span className="text-[11px] font-medium tracking-wide text-muted-foreground">

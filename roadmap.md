@@ -9,3 +9,5 @@
 - [x] Add a full-chat mode that closes the preview and configuration panels.
 - [x] Polish chat header spacing and branding
 - [x] Remove remaining dashboard and logo-column borders
+- [x] Apply #202020 dark grey across the workspace
+- [x] Make workspace scrollbars smaller and seamless

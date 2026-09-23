@@ -69,9 +69,9 @@ export function ResponsivePreview({
   }
 
   return (
-    <div className={cn('flex h-full flex-col bg-muted/50', expanded && 'fixed inset-0 z-50')}>
+    <div className={cn('flex h-full flex-col bg-background', expanded && 'fixed inset-0 z-50')}>
       {/* Toolbar */}
-      <div className="flex h-12 shrink-0 items-center justify-between bg-background/70 px-4">
+      <div className="flex h-12 shrink-0 items-center justify-between bg-background px-4">
         <div className="flex items-center gap-1 rounded-lg bg-secondary p-0.5">
           <ViewToggle
             active={device === 'mobile'}

@@ -9,9 +9,7 @@ import {
   Plus,
   Paperclip,
   Mic,
-  Maximize2,
-  Minimize2,
-} from 'lucide-react'
+  ChevronsLeft, ChevronsRight, } from 'lucide-react'
 import {
   Conversation,
   ConversationContent,
@@ -94,10 +92,10 @@ export function ConsultantPanel({
           variant="ghost"
           size="icon-sm"
           onClick={onToggleExpanded}
-          aria-label={expanded ? 'Restore workspace panels' : 'Expand chat'}
-          title={expanded ? 'Restore workspace panels' : 'Expand chat'}
+          aria-label={expanded ? 'Show preview' : 'Hide preview'}
+          title={expanded ? 'Show preview' : 'Hide preview'}
         >
-          {expanded ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+          {expanded ? <ChevronsLeft className="h-4 w-4" /> : <ChevronsRight className="h-4 w-4" />}
         </Button>
       </div>
 
@@ -158,16 +156,16 @@ export function ConsultantPanel({
       )}
 
       {/* Composer */}
-      <div className="shrink-0 border-t border-border p-3">
+      <div className="shrink-0 p-3">
         <PromptInput
           onSubmit={() => onGenerate()}
-          className="border-0 shadow-none [&_[data-slot=input-group]]:rounded-xl [&_[data-slot=input-group]]:border-0 [&_[data-slot=input-group]]:bg-muted/70 [&_[data-slot=input-group]]:shadow-none [&_[data-slot=input-group]]:ring-0"
+          className="border-0 shadow-none [&_[data-slot=input-group]]:rounded-2xl [&_[data-slot=input-group]]:border-0 [&_[data-slot=input-group]]:bg-muted [&_[data-slot=input-group]]:shadow-none [&_[data-slot=input-group]]:ring-0 [&_[data-slot=input-group]]:outline-none [&_[data-slot=input-group]:focus-within]:ring-0 [&_[data-slot=input-group]:focus-within]:border-0"
         >
           <PromptInputTextarea
             value={prompt}
             onChange={(e) => onPromptChange(e.target.value)}
             placeholder="Ask SUPERINTELLIGENS to build or change anything..."
-            className="min-h-20 px-3"
+            className="min-h-16 px-3 text-base md:text-sm"
           />
           <PromptInputFooter>
             <PromptInputTools>
@@ -183,6 +181,7 @@ export function ConsultantPanel({
               status={busy ? 'submitted' : 'ready'}
               disabled={!prompt.trim() || busy}
               aria-label="Send prompt"
+              className="rounded-full bg-muted-foreground/70 text-background hover:bg-muted-foreground"
             />
           </PromptInputFooter>
         </PromptInput>

@@ -71,8 +71,8 @@ export function ResponsivePreview({
   return (
     <div className={cn('flex h-full flex-col bg-muted/50', expanded && 'fixed inset-0 z-50')}>
       {/* Toolbar */}
-      <div className="flex h-12 shrink-0 items-center justify-between border-b border-white/10 px-4">
-        <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/5 p-0.5">
+      <div className="flex h-12 shrink-0 items-center justify-between bg-background/70 px-4">
+        <div className="flex items-center gap-1 rounded-lg bg-secondary p-0.5">
           <ViewToggle
             active={device === 'mobile'}
             onClick={() => setDevice('mobile')}
@@ -87,13 +87,13 @@ export function ResponsivePreview({
           />
         </div>
 
-        <div className="mx-3 hidden min-w-0 max-w-sm flex-1 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70 md:flex">
+        <div className="mx-3 hidden min-w-0 max-w-sm flex-1 items-center gap-2 rounded-full bg-secondary px-3 py-1 text-[11px] text-muted-foreground md:flex">
           <Globe className="h-3.5 w-3.5 shrink-0" />
           <span className="truncate">/{spec.hasContent ? spec.appName.toLowerCase().replace(/\s+/g, '-') : ''}</span>
           <button
             type="button"
             onClick={() => { setDevice('desktop'); setExpanded(true) }}
-            className="ml-auto rounded p-0.5 hover:bg-white/10 hover:text-white"
+            className="ml-auto rounded p-0.5 hover:bg-muted hover:text-foreground"
             aria-label="Open web pop-up"
             title="Open web pop-up"
           >
@@ -106,29 +106,29 @@ export function ResponsivePreview({
             variant="ghost"
             size="icon-sm"
             onClick={() => setRefreshKey((key) => key + 1)}
-            className="text-white/60 hover:bg-white/10 hover:text-white"
+            className="text-muted-foreground hover:bg-secondary hover:text-foreground"
             aria-label="Refresh preview"
             title="Refresh preview"
           >
             <RotateCcw className="h-3.5 w-3.5" />
           </Button>
-          <div className="flex h-8 items-center rounded-lg border border-white/10 bg-white/5">
+          <div className="flex h-8 items-center rounded-lg bg-secondary">
             <Button
               variant="ghost"
               size="icon-xs"
               onClick={() => setZoom((value) => ZOOM_LEVELS[Math.max(0, ZOOM_LEVELS.indexOf(value) - 1)])}
               disabled={zoom === ZOOM_LEVELS[0]}
-              className="text-white/60 hover:bg-white/10 hover:text-white"
+              className="text-muted-foreground hover:bg-muted hover:text-foreground"
               aria-label="Zoom out"
               title="Zoom out"
             ><Minus className="h-3.5 w-3.5" /></Button>
-            <span className="w-11 text-center text-[11px] tabular-nums text-white/70">{zoom}%</span>
+            <span className="w-11 text-center text-[11px] tabular-nums text-muted-foreground">{zoom}%</span>
             <Button
               variant="ghost"
               size="icon-xs"
               onClick={() => setZoom((value) => ZOOM_LEVELS[Math.min(ZOOM_LEVELS.length - 1, ZOOM_LEVELS.indexOf(value) + 1)])}
               disabled={zoom === ZOOM_LEVELS[ZOOM_LEVELS.length - 1]}
-              className="text-white/60 hover:bg-white/10 hover:text-white"
+              className="text-muted-foreground hover:bg-muted hover:text-foreground"
               aria-label="Zoom in"
               title="Zoom in"
             ><Plus className="h-3.5 w-3.5" /></Button>
@@ -138,7 +138,7 @@ export function ResponsivePreview({
             size="icon-sm"
             onClick={() => setGalleryOpen(true)}
             disabled={!spec.hasContent}
-            className="text-white/60 hover:bg-white/10 hover:text-white"
+            className="text-muted-foreground hover:bg-secondary hover:text-foreground"
             aria-label="Add image from gallery"
             title="Add image from gallery"
           >
@@ -148,7 +148,7 @@ export function ResponsivePreview({
             variant="ghost"
             size="icon-sm"
             onClick={() => setExpanded((value) => !value)}
-            className="text-white/60 hover:bg-white/10 hover:text-white"
+            className="text-muted-foreground hover:bg-secondary hover:text-foreground"
             aria-label={expanded ? 'Pop preview in' : 'Pop preview out'}
             title={expanded ? 'Pop preview in' : 'Pop preview out'}
           >
@@ -346,7 +346,7 @@ function ViewToggle({
       onClick={onClick}
       className={cn(
         'flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium transition-colors',
-        active ? 'bg-white/15 text-white' : 'text-white/50 hover:text-white',
+        active ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground',
       )}
     >
       {icon}

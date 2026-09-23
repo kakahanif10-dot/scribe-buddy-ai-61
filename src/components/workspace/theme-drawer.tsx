@@ -255,10 +255,10 @@ export function ThemeDrawer({
     <motion.aside
       animate={{ width: open ? 360 : 52 }}
       transition={{ duration: 0.3, ease: 'easeInOut' }}
-      className="relative z-10 hidden max-h-screen w-full max-w-[360px] shrink-0 flex-col overflow-hidden border-l border-border bg-muted/40 lg:flex"
+      className="relative z-10 hidden max-h-screen w-full max-w-[360px] shrink-0 flex-col overflow-hidden bg-muted/40 lg:flex"
     >
       {/* Header / collapse */}
-      <div className="flex h-12 shrink-0 items-center gap-2 border-b border-border px-3">
+      <div className="flex h-12 shrink-0 items-center gap-2 px-3">
         <button
           onClick={onToggle}
           aria-label={open ? 'Collapse configuration matrix' : 'Expand configuration matrix'}

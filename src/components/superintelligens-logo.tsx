@@ -6,7 +6,7 @@ export function SuperintelligensMark({ className }: { className?: string }) {
     <img
       src={whiteLogo}
       alt="SUPERINTELLIGENS logo"
-      className={cn('inline-block object-contain', className)}
+      className={cn('brand-mark inline-block object-contain', className)}
     />
   )
 }

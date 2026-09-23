@@ -80,7 +80,13 @@ export function ConsultantPanel({
 
   return (
     <div className="flex h-full flex-col bg-background">
-      <div className="flex shrink-0 justify-end px-2 pt-2">
+      <div className="flex h-11 shrink-0 items-center justify-between bg-background/80 px-3 backdrop-blur-sm">
+        <div className="flex items-center gap-2 px-1">
+          <SuperintelligensMark className="h-5 w-5" />
+          <span className="text-[11px] font-medium tracking-wide text-muted-foreground">
+            AI Consultant
+          </span>
+        </div>
         <Button
           variant="ghost"
           size="icon-sm"
@@ -94,7 +100,7 @@ export function ConsultantPanel({
 
       {/* Conversation */}
       <Conversation className="thin-scroll">
-        <ConversationContent className="gap-5 px-4 py-5">
+        <ConversationContent className="gap-5 px-4 py-4">
           {empty && <EmptyState onPick={onPromptChange} />}
 
           {messages.map((m) =>
@@ -118,7 +124,7 @@ export function ConsultantPanel({
 
       {/* Detected context strip */}
       {spec.hasContent && (
-        <div className="shrink-0 border-t border-border px-4 py-2.5">
+        <div className="shrink-0 px-4 py-2.5">
           <div className="flex items-center gap-2 overflow-hidden">
             <div className="flex items-center gap-1">
               {(['bg', 'surface', 'accent', 'text'] as const).map((k) => (

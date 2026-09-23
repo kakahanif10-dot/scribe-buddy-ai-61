@@ -290,6 +290,10 @@
   --sidebar-accent: oklch(0.92 0.006 250);
 }
 
+.workspace-light .brand-mark {
+  filter: invert(1);
+}
+
 .glow-orb {
   display: none;
 }

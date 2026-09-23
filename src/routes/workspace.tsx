@@ -378,7 +378,7 @@ function WorkspacePage() {
 
   return (
     <div className="workspace-light flex h-screen overflow-hidden bg-background text-foreground">
-      {!chatExpanded && <WorkspaceSidebar
+      {<WorkspaceSidebar
         collapsed={collapsed}
         onToggle={() => setCollapsed((c) => !c)}
         tab={tab}
@@ -392,7 +392,7 @@ function WorkspacePage() {
       />}
 
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
-        {!chatExpanded && <WorkspaceTopnav
+        {<WorkspaceTopnav
           projectName={spec.hasContent ? spec.appName : 'Untitled project'}
           deployState={deployState}
           onDeploy={handleDeploy}
@@ -400,7 +400,7 @@ function WorkspacePage() {
 
         {/* Three-pane console: consultant · preview · modifier drawer */}
         <div className={chatExpanded ? 'grid min-h-0 flex-1 grid-cols-1' : 'grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-[minmax(360px,460px)_1fr_auto]'}>
-          <div className="min-h-0 border-b border-border lg:border-b-0 lg:border-r">
+          <div className={chatExpanded ? 'min-h-0' : 'min-h-0 border-b border-border lg:border-b-0 lg:border-r'}>
             <ConsultantPanel
               prompt={prompt}
               onPromptChange={setPrompt}

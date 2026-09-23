@@ -26,9 +26,9 @@ import { AuthForm } from '@/components/auth/auth-form'
 
 function LoginPage() {
   return (
-    <main className="login-light relative flex min-h-screen overflow-hidden bg-background">
+    <main className="login-light login-gradient relative flex min-h-screen overflow-hidden">
       {/* Left brand panel */}
-      <div className="login-gradient relative hidden w-1/2 flex-col justify-between overflow-hidden border-r border-border p-10 lg:flex">
+      <div className="login-gradient relative hidden w-1/2 flex-col justify-between overflow-hidden p-10 lg:flex">
         <Link href="/" className="relative">
           <SuperintelligensLogo />
         </Link>
@@ -57,7 +57,7 @@ function LoginPage() {
       </div>
 
       {/* Right form panel */}
-      <div className="relative flex w-full flex-col items-center justify-center bg-background/90 px-6 backdrop-blur-sm lg:w-1/2">
+      <div className="relative flex w-full flex-col items-center justify-center px-6 lg:w-1/2">
         <Link
           href="/"
           className="absolute left-6 top-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"

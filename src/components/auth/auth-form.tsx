@@ -195,7 +195,7 @@ function SocialButton({
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="h-11 w-full gap-2.5 bg-background/70 text-foreground"
+      className="h-11 w-full gap-2.5 rounded-xl border-border bg-card text-foreground shadow-sm hover:bg-muted"
     >
       {icon}
       {label}

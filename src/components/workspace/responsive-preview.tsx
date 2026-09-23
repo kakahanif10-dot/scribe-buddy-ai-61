@@ -12,6 +12,8 @@ import {
   Maximize2,
   Minimize2,
   RotateCcw,
+  ExternalLink,
+  Globe,
 } from 'lucide-react'
 import { PhoneSimulator } from '@/components/workspace/phone-simulator'
 import { AppPreview } from '@/components/workspace/app-preview'
@@ -83,6 +85,20 @@ export function ResponsivePreview({
             icon={<Monitor className="h-3.5 w-3.5" />}
             label="Desktop"
           />
+        </div>
+
+        <div className="mx-3 hidden min-w-0 max-w-sm flex-1 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70 md:flex">
+          <Globe className="h-3.5 w-3.5 shrink-0" />
+          <span className="truncate">/{spec.hasContent ? spec.appName.toLowerCase().replace(/\s+/g, '-') : ''}</span>
+          <button
+            type="button"
+            onClick={() => { setDevice('desktop'); setExpanded(true) }}
+            className="ml-auto rounded p-0.5 hover:bg-white/10 hover:text-white"
+            aria-label="Open web pop-up"
+            title="Open web pop-up"
+          >
+            <ExternalLink className="h-3.5 w-3.5" />
+          </button>
         </div>
 
         <div className="flex items-center gap-1">

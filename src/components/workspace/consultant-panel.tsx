@@ -80,14 +80,7 @@ export function ConsultantPanel({
 
   return (
     <div className="flex h-full flex-col bg-background">
-      {/* Header */}
-      <div className="flex h-11 shrink-0 items-center gap-2 border-b border-border px-4 text-sm font-medium">
-        <SuperintelligensMark className="h-5 w-5" />
-        Build with AI
-        <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-normal text-muted-foreground">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          Autonomous agent
-        </span>
+      <div className="flex shrink-0 justify-end px-2 pt-2">
         <Button
           variant="ghost"
           size="icon-sm"
